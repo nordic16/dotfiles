@@ -1,0 +1,34 @@
+#! /bin/sh
+
+nvidia-settings -a '[gpu:0]/GPUPowerMizerMode=1'
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor HDMI-0 -d 1 2 3
+bspc monitor DP-2 -d 4 5 6
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a Nvidia-settings state=floating
+
+bspc rule -a xcalc state=floating
+
+bspc config focus_follows_pointer true
+bspc config pointer_motion_interval 5
+
+setxkbmap pt
+/home/xkyfal/.config/polybar/start_polybar.sh
+nvidia-settings --load-config-only
+picom &
+nitrogen --restore &
+
+dunstify --icon /usr/share/icons/WhiteSur-dark/emblems/24/checkmark.svg Success "Config reloaded successfully."

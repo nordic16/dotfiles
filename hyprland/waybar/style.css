@@ -8,8 +8,9 @@
 
 window#waybar {
     /*background-color: transparent; */
-    background: #141414;
-    color: @foreground;
+    /* background: #141414; */
+    background: @transparent;
+    color: #FFF;
     transition-property: background-color;
     transition-duration: .5s;
     border-radius: 10px;
@@ -181,7 +182,6 @@ label:focus {
 }
 
 #pulseaudio {
-  margin: 2px 0;
     background-color: #1e1e1e;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -217,11 +217,7 @@ label:focus {
 }
 
 #temperature {
-    margin-top: 2px;
     background-color: #1e1e1e;
-    margin-bottom: 2px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 
 #temperature.critical {
@@ -300,23 +296,25 @@ label:focus {
 }
 
 #custom-power {
-  margin-top: 2px;
-  margin-bottom: 2px;
   background: #1e1e1e;
   padding-left: 10px;
-  padding-right: 14px;
+  padding-right: 10px;
   font-weight: bold;
   color: @color5;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
 
+#custom-updates {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: #1e1e1e;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
 #cava {
   background: #1e1e1e;
   border-radius: 20px;  
   padding: 0px 5px;
-}
-
-.icon {
-  background: @color7;
 }

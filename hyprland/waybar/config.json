@@ -6,7 +6,7 @@
     "margin-top": 5,
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/spacing",  "custom/power", "temperature", "custom/spacing", "cava"],
+    "modules-left": ["custom/spacing",  "custom/power", "temperature", "custom/updates", "custom/spacing", "cava"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "network", "custom/spacing", "clock", "custom/spacing"],
    
@@ -131,6 +131,11 @@
     },
     "custom/spacing": {
         "format": " "
+    },
+    "custom/updates": {
+        "exec": "yay -Qu | wc -l",
+        "format": "<span color=\"#C69977\"></span> {}",
+        "interval": 120
     }
   }
 

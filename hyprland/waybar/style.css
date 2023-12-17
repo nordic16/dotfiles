@@ -55,7 +55,7 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: #1e1e1e;
-    color: @color5;
+    color: @color3;
     font-weight: bold;
 }
 
@@ -211,7 +211,7 @@ label:focus {
     background-color: #ffa000;
 }
 
-#temperature {
+#custom-temperature {
     background-color: #1e1e1e;
 }
 
@@ -295,7 +295,7 @@ label:focus {
   padding-left: 10px;
   padding-right: 10px;
   font-weight: bold;
-  color: @color5;
+  color: @color4;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }

@@ -169,8 +169,6 @@ label:focus {
 
 #network {
     background-color: #1e1e1e;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 
 #network.disconnected {
@@ -242,8 +240,10 @@ label:focus {
 }
 
 #mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
+    background: linear-gradient(90deg, @color2 0%, @color5 60%);
+    color: #FFFFFF;
+    border-radius: 20px;
+    font-weight: bold;
 }
 
 #mpd.disconnected {
@@ -312,4 +312,10 @@ label:focus {
   background: #1e1e1e;
   border-radius: 20px;  
   padding: 0px 5px;
+}
+
+#custom-temperature {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-right: 10px;
 }

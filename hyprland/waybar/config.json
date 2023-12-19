@@ -144,7 +144,7 @@
     },
     "custom/updates": {
         "exec": "yay -Qu | wc -l",
-        "format": "<span color=\"#A774A3\"></span> {} updates",
+        "format": "<span color=\"#A774A3\"></span> {}",
         "interval": 120
     },
     "mpd": {

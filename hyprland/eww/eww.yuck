@@ -1,12 +1,15 @@
-(defwindow example
+(defwindow notifs
            :monitor 0
-           :geometry (geometry :x "0%"
-                               :y "20px"
-                               :width "90%"
-                               :height "30px"
-                               :anchor "top center")
+           :geometry (geometry :x "5px"
+                               :y "10px"
+                               :width "10%"
+                               :height "100px"
+                               :anchor "top right")
            :stacking "fg"
            :reserve (struts :distance "40px" :side "top")
            :windowtype "dock"
            :wm-ignore false
-  "example content")
+(expander :items "test"
+
+)
+)

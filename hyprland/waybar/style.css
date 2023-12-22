@@ -319,3 +319,11 @@ label:focus {
     border-bottom-right-radius: 20px;
     padding-right: 10px;
 }
+
+#custom-notifications {
+  border-radius: 20px;
+  background: #1e1e1e;
+  color: @color4;
+  padding-left: 10px;
+  padding-right: 14px;
+}

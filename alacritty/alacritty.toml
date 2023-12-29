@@ -1,0 +1,11 @@
+live_config_reload = true
+
+[font.normal]
+family = "JetbrainsMonoNerdFont"
+
+[window]
+opacity = 0.85
+
+[window.padding]
+x = 4
+y = 4

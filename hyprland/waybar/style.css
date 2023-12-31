@@ -240,7 +240,7 @@ label:focus {
 }
 
 #mpd {
-    background: linear-gradient(90deg, @color2 0%, @color5 60%);
+    background: linear-gradient(90deg, @color1 0%, @color3 50%);
     color: #FFFFFF;
     border-radius: 20px;
     font-weight: bold;

@@ -151,12 +151,15 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: #1e1e1e;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 #memory {
-    background-color: #9b59b6;
+    background-color: #1e1e1e;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 #disk {

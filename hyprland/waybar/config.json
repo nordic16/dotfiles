@@ -10,9 +10,9 @@
       "custom/power", 
       "custom/updates", 
       "custom/spacing", 
-      "mpd"
+      "hyprland/workspaces"
     ],
-    "modules-center": ["hyprland/workspaces"],
+    "modules-center": ["mpd"],
     "modules-right": ["pulseaudio", 
       "network", 
       "custom/temperature",
@@ -54,15 +54,15 @@
     "clock": {
         // "timezone": "America/New_York",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format": "<span color=\"#5F8CBF\"> </span> {:%H:%M}",
+      "format": "<span color=\"#C99837\"> </span> {:%H:%M}",
       "format-alt": "  {:%Y-%m-%d}",
     },
     "cpu": {
-        "format": "<span color=\"#5F8CBF\"> </span> {usage}%",
+        "format": "<span color=\"#AC8E78\"> </span> {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "<span font=\"12\" color=\"#A774A3\"> </span>{}%"
+        "format": "<span font=\"12\" color=\"#C99837\"> </span>{}%"
     },
     "custom/temperature": {
         // "thermal-zone": 2,
@@ -81,7 +81,7 @@
     "network": {
       // "interface": "wlp2*", // (Optional) To force the use of this interface
       "format-wifi": "{essid} ({signalStrength}%) ",
-      "format-ethernet": "<span color=\"#A774A3\"></span>  Connected ",
+      "format-ethernet": "<span color=\"#C99837\"></span>  Connected ",
       "tooltip-format": "{ifname} via {gwaddr} ",
       "format-linked": "{ifname} (No IP) ",
       "format-disconnected": "Disconnected ⚠",
@@ -111,10 +111,10 @@
 
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "<span color=\"#5D9CD3\">{icon}</span>  {volume}%",
-        "format-bluetooth": "<span color=\"#5D9CD3\">{icon}</span>  {volume}%",
-        "format-bluetooth-muted": "<span color=\"#5D9CD3\"> {icon}</span>",
-        "format-muted": "<span color=\"#5D9CD3\"> {icon}</span>",
+        "format": "<span color=\"#AC8E78\">{icon}</span>  {volume}%",
+        "format-bluetooth": "<span color=\"#AC8E78\">{icon}</span>  {volume}%",
+        "format-bluetooth-muted": "<span color=\"#AC8E78\"> {icon}</span>",
+        "format-muted": "<span color=\"#AC8E78\"> {icon}</span>",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {

@@ -1,29 +1,30 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    "width": 1900, // Waybar width
+    "height": 35, // Waybar height (to be removed for auto height)
+    "width": 1800, // Waybar width
     "margin-top": 5,
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/spacing",  
+    "modules-left": [ 
       "custom/power", 
-      "custom/updates", 
-      "custom/spacing", 
-      "hyprland/workspaces"
+      "hyprland/workspaces", 
+      "mpd"
     ],
-    "modules-center": ["mpd"],
-    "modules-right": ["pulseaudio", 
+
+    "modules-center": ["window"],
+    "modules-right": [
+      "custom/piavpn",
       "network", 
-      "custom/temperature",
+      "custom/updates",
       "custom/spacing", 
+      "pulseaudio",
       "cpu",
       "memory",
       "custom/spacing",
       "clock",
       "custom/spacing",
-      "custom/notifications",
-      "custom/spacing"
+      "custom/notifications"
     ],
    
     "hyprland/workspaces": {
@@ -38,7 +39,7 @@
             "7": ["DP-2"],
             "8": ["DP-2"],
             "9": ["DP-2"],
-            "10": ["DP-2"],
+            "10": ["DP-2"]
          },
          "disable-scroll": true,
          "warp-on-scroll": true,
@@ -180,6 +181,16 @@
 
     "custom/notifications": {
       "format": "<span size=\"large\">󰅺</span>"
+    },
+    
+    "custom/piavpn": {
+      "format-icons": {
+        "connected": ""
+      },
+
+      "format": "<span color=\"#A774A3\">{icon}</span> {}",
+      "exec": "piactl get connectionstate",
+      "interval": 5
     }
 
 

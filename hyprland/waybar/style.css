@@ -2,18 +2,18 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Jetbrains Mono Nerd Font;
+    font-family: Jetbrains Mono Nerd Font, Source Code Pro;
     font-size: 14px;
 }
 
 window#waybar {
     /*background-color: transparent; */
     /* background: #141414; */
-    background: #1e1e1e;
+    /*background: #1e1e1e; */
+    background: @transparent;
     color: #FFF;
-    transition-property: background-color;
     transition-duration: .5s;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 window#waybar.hidden {
@@ -99,7 +99,7 @@ button:hover {
 #workspaces {
     border: 4px solid #1e1e1e;
     background: #232323;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 
@@ -115,8 +115,7 @@ button:hover {
 
 #clock {
     background-color: #232323;
-    border-radius: 20px;
-    margin: 5px 0;
+    border-radius: 10px;
 }
 
 #battery {
@@ -171,7 +170,7 @@ label:focus {
 }
 
 #network {
-    margin: 5px 0;
+    border-radius: 10px;
     background-color: #232323;
 }
 
@@ -180,10 +179,8 @@ label:focus {
 }
 
 #pulseaudio {
-    margin: 5px 0;
     background-color: #232323;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-radius: 10px;
 }
 
 #pulseaudio.muted {
@@ -245,11 +242,9 @@ label:focus {
 }
 
 #mpd {
-    margin: 5px 0; 
     background: #232323;
-    border-radius: 20px;
+    border-radius: 10px;
     color: #FFFFFF;
-    border-radius: 20px;
     font-weight: bold;
 }
 
@@ -290,19 +285,17 @@ label:focus {
 #custom-power {
   background: #1e1e1e;
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 8px;
   font-weight: bold;
   color: @color4;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-radius: 10px;
 }
 
 #custom-updates {
-    margin: 5px 0;
     background: #232323;
-    padding-right: 10px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    padding-left: 10px;
+    padding-right: 8px;
+    border-radius: 10px;
 }
 
 #cava {
@@ -321,9 +314,7 @@ label:focus {
 }
 
 #custom-piavpn {
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-radius: 10px;
   background: #232323;
-  margin: 5px 0; 
-  padding-right: 10px;
+  padding-right: 8px;
 }

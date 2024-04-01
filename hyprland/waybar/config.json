@@ -144,7 +144,7 @@
     "custom/updates": {
         "exec": "yay -Qu | wc -l",
         "format": "<span color=\"#C2BCAC\"></span> {}",
-        "interval": 120
+        "interval": 3600
     },
     "mpd": {
         "format": "{stateIcon} {artist} - {title} ({elapsedTime:%M:%S})",

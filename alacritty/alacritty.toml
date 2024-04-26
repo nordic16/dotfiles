@@ -1,7 +1,7 @@
 live_config_reload = true
 
 [colors.primary]
-background = "#232323"
+background = "#000000"
 
 [font.normal]
 family = "JetbrainsMonoNerdFont"

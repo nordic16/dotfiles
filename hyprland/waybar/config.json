@@ -2,22 +2,24 @@
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 35, // Waybar height (to be removed for auto height)
-    "width": 1800, // Waybar width
+    "width": 1875, // Waybar width
     "margin-top": 5,
     "spacing": 12, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [ 
       "custom/power", 
-      "mpd"
+      "hyprland/workspaces"
     ],
 
-    "modules-center": ["hyprland/workspaces"],
+    "modules-center": [      
+     "clock",
+    ],
+
     "modules-right": [
       "custom/piavpn",
       "network", 
       "custom/updates",
       "pulseaudio",
-      "clock",
     ],
    
     "hyprland/workspaces": {

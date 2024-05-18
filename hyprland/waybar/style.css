@@ -1,4 +1,4 @@
-@import '/home/xkyfal/.cache/wal/colors-waybar.css';
+@import 'colors.css';
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -54,7 +54,7 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    color: @color3;
+    color: @color2;
     font-weight: bold;
 }
 
@@ -116,6 +116,7 @@ button:hover {
 #clock {
     background-color: #232323;
     border-radius: 10px;
+    color: @color3;
 }
 
 #battery {
@@ -172,6 +173,7 @@ label:focus {
 #network {
     border-radius: 10px;
     background-color: #232323;
+    color: @color1;
 }
 
 #network.disconnected {
@@ -181,6 +183,7 @@ label:focus {
 #pulseaudio {
     background-color: #232323;
     border-radius: 10px;
+    color: @color3;
 }
 
 #pulseaudio.muted {
@@ -287,7 +290,7 @@ label:focus {
   padding-left: 10px;
   padding-right: 8px;
   font-weight: bold;
-  color: @color4;
+  color: @color1;
   border-radius: 10px;
 }
 
@@ -296,6 +299,7 @@ label:focus {
     padding-left: 10px;
     padding-right: 8px;
     border-radius: 10px;
+    color: @color2;
 }
 
 #cava {
@@ -308,7 +312,7 @@ label:focus {
 #custom-notifications {
   border-radius: 20px;
   background: #1e1e1e;
-  color: @color4;
+  color: @color1;
   padding-left: 10px;
   padding-right: 14px;
 }

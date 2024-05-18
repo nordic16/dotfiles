@@ -16,7 +16,6 @@
     ],
 
     "modules-right": [
-      "custom/piavpn",
       "network", 
       "custom/updates",
       "pulseaudio",
@@ -50,7 +49,7 @@
     "clock": {
         // "timezone": "America/New_York",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format": "<span color=\"#C2BCAC\"> </span> {:%H:%M}",
+      "format": "  {:%H:%M}",
       "format-alt": "  {:%Y-%m-%d}",
     },
     "cpu": {
@@ -77,7 +76,7 @@
     "network": {
       // "interface": "wlp2*", // (Optional) To force the use of this interface
       "format-wifi": "{essid} ({signalStrength}%) ",
-      "format-ethernet": "<span color=\"#C99837\"></span>  Connected",
+      "format-ethernet": "  Connected",
       "tooltip-format": "{ifname} via {gwaddr} ",
       "format-linked": "{ifname} (No IP) ",
       "format-disconnected": "Disconnected ⚠",
@@ -107,10 +106,10 @@
 
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "<span color=\"#C2BCAC\">{icon}</span>  {volume}%",
-        "format-bluetooth": "<span color=\"#C2BCAC\">{icon}</span>  {volume}%",
-        "format-bluetooth-muted": "<span color=\"#C2BCAC\"> {icon}</span>",
-        "format-muted": "<span color=\"#C2BCAC\"> {icon}</span>",
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": " {icon}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -145,7 +144,7 @@
     },
     "custom/updates": {
         "exec": "yay -Qu | wc -l",
-        "format": "<span color=\"#C2BCAC\"></span> {}",
+        "format": " {}",
         "interval": 3600
     },
     "mpd": {

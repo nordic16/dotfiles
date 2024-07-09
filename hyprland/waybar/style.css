@@ -4,13 +4,14 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Jetbrains Mono Nerd Font, Source Code Pro;
     font-size: 14px;
+    font-weight: 800;
 }
 
 window#waybar {
     /*background-color: transparent; */
     /* background: #141414; */
-    /*background: #1e1e1e; */
-    background: @transparent;
+    background: @color0;
+    /*background: @transparent;*/
     color: #FFF;
     transition-duration: .5s;
     border-radius: 5px;
@@ -116,7 +117,7 @@ button:hover {
 #clock {
     background-color: #232323;
     border-radius: 10px;
-    color: @color3;
+    color: @color1;
 }
 
 #battery {
@@ -290,7 +291,7 @@ label:focus {
   padding-left: 10px;
   padding-right: 8px;
   font-weight: bold;
-  color: @color1;
+  color: @color3;
   border-radius: 10px;
 }
 

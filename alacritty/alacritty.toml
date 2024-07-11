@@ -4,7 +4,7 @@ live_config_reload = true
 background = "#000000"
 
 [font.normal]
-family = "Creep"
+family = "Terminus"
 
 [window]
 opacity = 0.85

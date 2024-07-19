@@ -4,10 +4,10 @@ live_config_reload = true
 background = "#000000"
 
 [font.normal]
-family = "Terminus"
+family = "JetbrainsMono Nerd Font"
 
 [font]
-size = 14
+size = 12
 
 [window]
 opacity = 0.85

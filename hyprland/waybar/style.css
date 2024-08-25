@@ -1,6 +1,6 @@
-@import 'colors.css';
+@import 'colors-waybar.css';
 
-*:not(waybar) {
+* {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Jetbrains Mono Nerd Font, Source Code Pro;
     font-size: 14px;
@@ -55,7 +55,7 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    color: @color2;
+    color: @color6;
     font-weight: bold;
 
 }
@@ -117,7 +117,7 @@ button:hover {
 #clock {
     background: rgba(50, 50, 50, 0.4);
     border-radius: 10px;
-    color: @color1;
+    color: @color6;
 }
 
 #battery {
@@ -174,7 +174,7 @@ label:focus {
 #network {
     background: rgba(50, 50, 50, 0.4);
     border-radius: 10px;
-    color: @color1;
+    color: @color5;
 }
 
 #network.disconnected {
@@ -186,6 +186,7 @@ label:focus {
 #pulseaudio {
     border-radius: 10px;
     background: rgba(50, 50, 50, 0.4);
+    color: @color5;
 }
 
 #pulseaudio.muted {
@@ -291,7 +292,7 @@ label:focus {
   background: rgba(50, 50, 50, 0.4);
   padding-left: 10px;
   padding-right: 8px;
-  color: @color3;
+  color: @color5;
   border-radius: 10px;
 }
 
@@ -300,7 +301,7 @@ label:focus {
     padding-left: 10px;
     padding-right: 8px;
     border-radius: 10px;
-    color: @color2;
+    color: @color6;
 }
 
 #cava {

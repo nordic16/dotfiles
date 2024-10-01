@@ -8,7 +8,7 @@
 #           |___/                                                 |_|        
 
 
-# if waybar is opened then restart it
+# if waybar is running then restart it
 if [ $(pidof waybar) ] 
   then
     pkill -SIGUSR2 waybar

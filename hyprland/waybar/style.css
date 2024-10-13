@@ -3,8 +3,8 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Jetbrains Mono Nerd Font, Source Code Pro;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 800;
 }
 
 window#waybar {
@@ -54,7 +54,7 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 12px;
     color: @color6;
     font-weight: bold;
 
@@ -99,9 +99,9 @@ button:hover {
 
 #window,
 #workspaces {
-    background: rgba(50, 50, 50, 0.3);
-    border-radius: 10px;
-}
+    background: @color0;
+    border-radius: 20px;
+  }
 
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -115,8 +115,9 @@ button:hover {
 }
 
 #clock {
-    background: rgba(50, 50, 50, 0.4);
-    border-radius: 10px;
+    padding: 0 12px;
+    background: @color0;
+    border-radius: 20px;
     color: @color6;
 }
 
@@ -152,15 +153,17 @@ label:focus {
 }
 
 #cpu {
-    margin: 5px 0;
-    background-color: #232323;
+    background-color: @color0;
+    padding: 0 12px;
+    border-radius: 20px;
+    color: @color6;
 }
 
 #memory {
-    background-color: #232323;
-    margin: 5px 0;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    background-color: @color0;
+    padding: 0 12px;
+    border-radius: 20px;
+    color: @color6;
 }
 
 #disk {
@@ -172,8 +175,9 @@ label:focus {
 }
 
 #network {
-    background: rgba(50, 50, 50, 0.4);
-    border-radius: 10px;
+    background: @color0;
+    border-radius: 20px;
+    padding: 0 12px;
     color: @color5;
 }
 
@@ -184,8 +188,9 @@ label:focus {
 }
 
 #pulseaudio {
-    border-radius: 10px;
-    background: rgba(50, 50, 50, 0.4);
+    border-radius: 20px;
+    padding: 0 12px;
+    background: @color0;
     color: @color5;
 }
 
@@ -289,18 +294,18 @@ label:focus {
 }
 
 #custom-power {
-  background: rgba(50, 50, 50, 0.4);
-  padding-left: 10px;
-  padding-right: 8px;
+  background: @color0;
+  padding-left: 12px;
+  padding-right: 10px;
   color: @color5;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
+
 #custom-updates {
-    background: rgba(60, 60, 60, 0.4);
-    padding-left: 10px;
-    padding-right: 8px;
-    border-radius: 10px;
+    background: @color0;
+    border-radius: 20px;
+    padding: 0 12px;
     color: @color6;
 }
 
@@ -313,7 +318,7 @@ label:focus {
 
 #custom-notifications {
   border-radius: 20px;
-  background: #1e1e1e;
+  background: @color0;
   color: @color1;
   padding-left: 10px;
   padding-right: 14px;

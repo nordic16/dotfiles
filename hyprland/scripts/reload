@@ -9,12 +9,9 @@
 
 
 # if waybar is running then restart it
-if [ $(pidof waybar) ] 
+if [ ! $(pidof ags) ] 
   then
-    pkill -SIGUSR2 waybar
-
-  else
-    waybar -c ~/.config/waybar/config.json & disown
+	  ags
 fi
 
 

@@ -8,10 +8,13 @@
 #           |___/                                                 |_|        
 
 
-# if waybar is running then restart it
-if [ ! $(pidof ags) ] 
-  then
-	  ags
-fi
+reloadStuff=(hyprpaper)
+
+for i in ${reloadStuff[@]}; do
+    # if waybar is running then restart it
+    if [ ! $(pidof $i) ]; then
+        eval "$i" # executes command.
+    fi
+done
 
 

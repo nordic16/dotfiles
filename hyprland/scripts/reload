@@ -17,4 +17,5 @@ for i in ${reloadStuff[@]}; do
     fi
 done
 
+notify-send -a "Computer" "Reload" "Reloaded configuration successfully!"
 

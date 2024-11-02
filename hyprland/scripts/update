@@ -1,0 +1,7 @@
+#!/bin/bash
+
+count=$(yay -Qu | wc -l)
+
+if [[ $count -gt 0 ]]; then
+    notify-send -a "Computer" "Heads up!" "Got $count updates ready!"
+fi

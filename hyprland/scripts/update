@@ -3,5 +3,9 @@
 count=$(yay -Qu | wc -l)
 
 if [[ $count -gt 0 ]]; then
-    notify-send -a "Computer" "Heads up!" "Got $count updates ready!"
+    confirm=`notify-send -a "computer" "Attention!" "Got $count updates ready!" -A "Y"="Update!" -A "Later" -t 2500000`
+
+    if [[ $confirm -eq "Y" ]]; then
+        eval `/usr/bin/alacritty -e "yay"`
+    fi
 fi

@@ -3,12 +3,9 @@
 NOTES_PATH="$HOME/Documents/obsidian/tasks/Daily Notes/"
 AVAILABLE_PERIOD=7 # number of days after which daily notes will be deleted.
 
-echo "Deleting old notes...."
-output=`ls "$NOTES_PATH"`
+notify-send "Deleting old notes..." "Deleting notes over $AVAILABLE_PERIOD days old..."
 
 MAX_PERIOD=`date -d "$AVAILABLE_PERIOD days ago"`
 
 # deletes files over 7 days old.
 find "$NOTES_PATH" -type f -not -newermt "$MAX_PERIOD" -exec rm {} \;
-
-

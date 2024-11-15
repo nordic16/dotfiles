@@ -1,0 +1,113 @@
+{
+  "bar.customModules.updates.pollingInterval": 1440000,
+  "theme.font.weight": 700,
+  "theme.font.name": "Ubuntu Nerd Font",
+  "tear": false,
+  "theme.bar.floating": true,
+  "theme.bar.buttons.enableBorders": false,
+  "theme.bar.buttons.borderSize": "0.2em",
+  "theme.bar.buttons.padding_y": "0.1rem",
+  "theme.bar.buttons.radius": "1em",
+  "theme.bar.buttons.workspaces.enableBorder": false,
+  "wallpaper.pywal": true,
+  "theme.bar.menus.monochrome": false,
+  "wallpaper.image": "/home/xkyfal/backgrounds/painting-mountain-lake-with-mountain-background.jpg",
+  "theme.bar.menus.opacity": 100,
+  "theme.bar.scaling": 85,
+  "scalingPriority": "both",
+  "theme.bar.outer_spacing": "1em",
+  "menus.clock.weather.location": "Amadora",
+  "menus.clock.weather.unit": "metric",
+  "menus.clock.time.military": true,
+  "menus.clock.time.hideSeconds": true,
+  "theme.bar.buttons.dashboard.enableBorder": false,
+  "menus.dashboard.stats.enable_gpu": false,
+  "menus.dashboard.shortcuts.left.shortcut1.command": "firefox",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "󰈹",
+  "menus.transitionTime": 100,
+  "menus.transition": "crossfade",
+  "theme.bar.location": "top",
+  "theme.bar.transparent": true,
+  "menus.clock.weather.key": "ce2047d2a3c641d5a3a105344231712",
+  "bar.clock.format": "%a %b %d  %H:%M:%S",
+  "bar.media.show_artist": false,
+  "menus.dashboard.powermenu.avatar.image": "/home/xkyfal/assets/thorfinn.jpg",
+  "theme.matugen": true,
+  "theme.matugen_settings.mode": "light",
+  "menus.dashboard.stats.enabled": true,
+  "theme.notification.border_radius": "1em",
+  "notifications.position": "top",
+  "theme.notification.scaling": 85,
+  "theme.bar.buttons.spacing": "0.25em",
+  "theme.bar.buttons.padding_x": "1rem",
+  "bar.clock.showIcon": true,
+  "bar.clock.showTime": true,
+  "wallpaper.enable": true,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "cpu",
+        "clock",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "theme.bar.buttons.modules.ram.enableBorder": false,
+  "menus.dashboard.shortcuts.right.shortcut3.command": "flameshot gui",
+  "menus.dashboard.directories.right.directory1.label": "󱧶  Documents",
+  "menus.dashboard.directories.left.directory3.label": "󰚝  Projects",
+  "menus.dashboard.directories.left.directory2.label": "󰉏  Videos",
+  "menus.dashboard.directories.left.directory1.label": "󰉍  Downloads",
+  "menus.dashboard.directories.right.directory3.label": "󱂵  Home",
+  "menus.dashboard.directories.right.directory2.label": "󰉏  Pictures",
+  "theme.matugen_settings.scheme_type": "content",
+  "theme.matugen_settings.variation": "standard_2",
+  "theme.bar.menus.menu.media.scaling": 95,
+  "bar.workspaces.showWsIcons": false,
+  "bar.workspaces.showApplicationIcons": false,
+  "bar.workspaces.applicationIconOncePerWorkspace": true,
+  "theme.bar.buttons.windowtitle.enableBorder": false,
+  "theme.bar.buttons.monochrome": false,
+  "theme.matugen_settings.contrast": 0
+}

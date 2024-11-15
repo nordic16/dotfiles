@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# TODO: implement feature to prevent same background from being set twice, preferably through a global variable
+
 WALLPAPER_PATH="$HOME/backgrounds/"
 
 # all files.
@@ -7,9 +9,9 @@ wallpapers=($(find $WALLPAPER_PATH -type f -exec realpath -s {} \;))
 len=${#wallpapers[@]}
 
 rand=`shuf -i0-$(( $len - 1 )) -n1`
-
 selected="${wallpapers[$rand]}"
 
+notify-send "Picking a new wallpaper..." "Check it out!"
 agsv1 -r "setWallpaper(\"$selected\")"
 
 

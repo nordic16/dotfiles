@@ -1,0 +1,15 @@
+#!/bin/sh
+
+WALLPAPER_PATH="$HOME/backgrounds/"
+
+# all files.
+wallpapers=($(find $WALLPAPER_PATH -type f -exec realpath -s {} \;))
+len=${#wallpapers[@]}
+
+rand=`shuf -i0-$(( $len - 1 )) -n1`
+
+selected="${wallpapers[$rand]}"
+
+agsv1 -r "setWallpaper(\"$selected\")"
+
+

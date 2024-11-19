@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
-NOTES_PATH="$HOME/Documents/obsidian/tasks/Daily Notes/"
+user=`whoami`
+
+NOTES_PATH="/home/$user/Documents/obsidian/tasks/Daily Notes/"
 AVAILABLE_PERIOD=7 # number of days after which daily notes will be deleted.
 
 notify-send "Deleting old notes..." "Deleting notes over $AVAILABLE_PERIOD days old..."

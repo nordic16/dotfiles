@@ -1,8 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 # TODO: implement feature to prevent same background from being set twice, preferably through a global variable
 
-WALLPAPER_PATH="$HOME/backgrounds/"
+USER=`whoami`
+
+WALLPAPER_PATH="/home/$user/backgrounds/"
 
 # all files.
 wallpapers=($(find $WALLPAPER_PATH -type f -exec realpath -s {} \;))

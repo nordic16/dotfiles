@@ -155,4 +155,4 @@ configuration {
   }
 }
 
-@theme "colors-rofi-dark.rasi"
+@theme "~/.cache/wal/rofi-theme-dark.rasi"

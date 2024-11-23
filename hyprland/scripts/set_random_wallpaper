@@ -4,7 +4,7 @@
 
 USER=`whoami`
 
-WALLPAPER_PATH="/home/$user/backgrounds/"
+WALLPAPER_PATH="/home/$USER/backgrounds/"
 
 # all files.
 wallpapers=($(find $WALLPAPER_PATH -type f -exec realpath -s {} \;))

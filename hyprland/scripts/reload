@@ -8,14 +8,16 @@
 #           |___/                                                 |_|        
 
 
-reloadStuff=(hyprpaper)
+reloadStuff=()
 
 for i in ${reloadStuff[@]}; do
-    # if waybar is running then restart it
     if [ ! $(pidof $i) ]; then
         eval "$i" # executes command.
     fi
 done
+
+# a few special cases.
+agsv1 -q && agsv1
 
 notify-send -a "Computer" "Reload" "Reloaded configuration successfully!"
 

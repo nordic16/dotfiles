@@ -14,6 +14,6 @@ rand=`shuf -i0-$(( $len - 1 )) -n1`
 selected="${wallpapers[$rand]}"
 
 notify-send "Picking a new wallpaper..." "Check it out!"
-agsv1 -r "setWallpaper(\"$selected\")"
+/usr/bin/agsv1 -r "setWallpaper(\"$selected\")"
 
 

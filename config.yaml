@@ -26,6 +26,9 @@ dotfiles:
   d_scripts:
     src: config/scripts
     dst: ~/.config/scripts
+  d_fonts:
+    src: fonts
+    dst: ~/.fonts
 profiles:
   xBit:
     dotfiles:
@@ -35,3 +38,4 @@ profiles:
     - d_hypr
     - d_wallust
     - d_scripts
+    - d_fonts

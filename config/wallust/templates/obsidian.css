@@ -1,0 +1,28 @@
+/* Template Wallust para Obsidian */
+.theme-dark {
+    /* Cores Principais */
+    --background-primary: rgb({{background | strip}});
+    --background-primary-alt: rgba({{background | strip}}, 0.8);
+    --background-secondary: rgba({{color0 | strip}}, 0.5);
+    --background-secondary-alt: rgb({{color0 | strip}});
+    
+    /* Texto */
+    --text-normal: rgb({{foreground | strip}});
+    --text-muted: rgba({{foreground | strip}}, 0.7);
+    --text-faint: rgba({{foreground | strip}}, 0.5);
+    
+    /* Acentos e Interatividade */
+    --interactive-accent: rgb({{color2 | strip}});
+    --interactive-accent-hover: rgb({{color4 | strip}});
+    --text-accent: rgb({{color2 | strip}});
+    
+    /* Headers (opcional: dar cores diferentes a cada nível) */
+    --h1-color: rgb({{color1 | strip}});
+    --h2-color: rgb({{color2 | strip}});
+    --h3-color: rgb({{color3 | strip}});
+    --h4-color: rgb({{color4 | strip}});
+    
+    /* Borders e Cursors */
+    --background-modifier-border: rgba({{foreground | strip}}, 0.1);
+    --caret-color: rgb({{color2 | strip}});
+}

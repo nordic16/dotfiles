@@ -1,0 +1,23 @@
+[global]
+    frame_color = "#6A6A6B"
+    separator_color = "frame"
+    frame_width = 2
+    corner_radius = 10
+    icon_path = "/usr/share/icons/Tela-circle-blue-light/16@2x/devices/"
+
+[urgency_low]
+    background = "#000103"
+    foreground = "#E1EDFF"
+    timeout = 10
+
+[urgency_normal]
+    background = "#000103"
+    foreground = "#E1EDFF"
+    frame_color = "#6A6A6B"
+    timeout = 15
+
+[urgency_high]
+    background = "#000103"
+    foreground = "#4A4849"
+    frame_color = "#4A4849"
+    timeout = 0

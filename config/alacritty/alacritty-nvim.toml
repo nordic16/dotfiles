@@ -1,0 +1,30 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/ayu_dark.toml"
+]
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "CaskaydiaCoveNerdFont"
+style = "Bold"
+
+[font.normal]
+family = "CaskaydiaCoveNerdFont"
+style = "Regular"
+
+[font.bold_italic]
+family = "CaskaydiaCoveNerdFont"
+style = "Bold Italic"
+
+[font.italic]
+family = "CaskaydiaCoveNerdFont"
+style = "Italic"
+
+[window]
+opacity = 0.6
+padding.x = 0
+padding.y = 0
+decorations = "Full"
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+# Aplica as cores e o wallpaper
+wallust run "$1"
+
+# Atualiza o wallpaper (exemplo com swwwhy
+hyprctl hyprpaper path "$1"
+
+# Notificação
+notify-send "Wallust" "Esquema de cores atualizado!"

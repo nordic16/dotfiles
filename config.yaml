@@ -1,0 +1,37 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: .
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+dotfiles:
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
+  d_waybar:
+    src: config/waybar
+    dst: ~/.config/waybar
+  d_dunst:
+    src: config/dunst
+    dst: ~/.config/dunst
+  d_hypr:
+    src: config/hypr
+    dst: ~/.config/hypr
+  d_wallust:
+    src: config/wallust
+    dst: ~/.config/wallust
+  d_scripts:
+    src: config/scripts
+    dst: ~/.config/scripts
+profiles:
+  xBit:
+    dotfiles:
+    - d_alacritty
+    - d_waybar
+    - d_dunst
+    - d_hypr
+    - d_wallust
+    - d_scripts

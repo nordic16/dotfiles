@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+pywalfox update
+killall dunst
+dunst &
+notify-send -i computer "Dunst" "Colors updated successfully!!!!"

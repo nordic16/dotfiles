@@ -1,0 +1,28 @@
+backend = "full"
+color_space = "lab-mixed"
+palette = "saliencedark"
+check_contrast = true
+
+
+[templates]
+# Define o template do Hyprland
+hyprland = { src = "hyprland.conf", dst = "~/.config/hypr/colors.conf" }
+hypr_toolkit = { src = "hyprland.conf", dst = "~/.config/hypr/hyprtoolkit.conf" }
+
+# Exemplo para Waybar (se usares CSS)
+waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+
+# Emula o colors.json do pywal
+pywal_json = { src = "colors.json", dst = "~/.cache/wal/colors.json" }
+
+# Emula o colors.sh do pywal
+pywal_sh = { src = "colors.sh", dst = "~/.cache/wal/colors.sh" }
+
+alacritty = { src = "alacritty.toml", dst = "~/.config/alacritty/colors.toml" }
+
+pywal_compat = { src = "pywal.json", dst = "~/.cache/wal/colors.json" }
+
+dunst = { src = "dunstrc", dst = "~/.config/dunst/dunstrc" }
+
+[hooks]
+on_update = '$HOME/.config/scripts/wallust_on_update'

@@ -1,3 +1,3 @@
-# nordic16 - My dotfiles
+# My dotfiles
 
-**:warning: Note: this is NOT a complete rice. It's still very far from one! :warning:**
+Tracked using [dotdrop](https://github.com/deadc0de6/dotdrop)

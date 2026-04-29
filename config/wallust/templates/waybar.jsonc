@@ -5,7 +5,7 @@
   "width": 1895,
   "spacing": 15,
 
-  "modules-left": ["custom/power", "hyprland/workspaces", "mpris"],
+  "modules-left": ["custom/power", "hyprland/workspaces"],
   "modules-center": ["hyprland/window", "cpu", "memory"],
   "modules-right": ["pulseaudio", "bluetooth", "network", "clock"],
 
@@ -14,11 +14,11 @@
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "1": "<span color='{{color1}}' size='140%'></span>",
-      "2": "<span color='{{color2}}' size='140%'>󰖟</span>",
-      "3": "<span color='{{color3}}' size='140%'>󰅬</span>",
-      "4": "<span color='{{color4}}' size='140%'></span>",
-      "5": "<span color='{{color5}}' size='140%'></span>",
+      "1": "<span color='{{color7}}' size='140%'></span>",
+      "2": "<span color='{{color7}}' size='140%'>󰖟</span>",
+      "3": "<span color='{{color7}}' size='140%'>󰅬</span>",
+      "4": "<span color='{{color7}}' size='140%'></span>",
+      "5": "<span color='{{color7}}' size='140%'></span>",
       "urgent": "<span color='{{color1}}'>  </span>",
       "focused": "<span color='{{color6}}'>  </span>",
       "default": "  ",
@@ -73,7 +73,7 @@
   },
 
   "custom/power": {
-    "format": "<span color='{{color1}}' size='140%'>⏼</span>",
+    "format": "<span color='{{color7}}' size='140%'>⏼</span>",
     "on-click": "hyprshutdown",
   },
 

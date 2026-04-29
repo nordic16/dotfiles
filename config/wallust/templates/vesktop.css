@@ -1,0 +1,54 @@
+/**
+ * @name Wallust-Transparent-Nuclear
+ * @author Custom
+ * @version 4.0.0
+*/
+
+:root {
+    /* Define a cor do Wallust com 70% de opacidade (o 0.7 no fim) */
+    --w-bg-trans: rgba({{background | rgb | strip}}, 0.7);
+    --w-fg: rgb({{foreground | strip}});
+    --w-acc: rgb({{color2 | strip}});
+}
+
+/* 1. Tornar TUDO transparente por defeito */
+#app-mount,
+[class^="app_"],
+[class^="bg_"],
+[class^="layers_"],
+[class^="layer_"],
+[class^="container_"],
+[class^="main_"],
+[class^="chat_"],
+[class^="content_"],
+[class^="sidebar_"],
+[class^="base_"],
+[class^="scroller_"],
+[class^="privateChannels_"],
+[class^="panels_"],
+[class^="standardSidebarView_"],
+[class^="itemCard_"] {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 2. Aplicar a cor semi-transparente apenas na base real */
+body {
+    background-color: var(--w-bg-trans) !important;
+    background-image: none !important;
+}
+
+/* 3. Forçar o texto e acentos para manter a visibilidade */
+.theme-dark, .theme-light {
+    --text-normal: var(--w-fg) !important;
+    --header-primary: var(--w-fg) !important;
+    --interactive-normal: var(--w-fg) !important;
+    --interactive-hover: var(--w-acc) !important;
+    --brand-experiment: var(--w-acc) !important;
+}
+
+/* 4. Dar um pouco de contraste ao input de texto */
+[class^="channelTextArea_"] {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid var(--w-acc);
+}

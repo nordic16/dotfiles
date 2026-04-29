@@ -3,4 +3,5 @@
 pywalfox update
 killall dunst
 dunst &
+pkill -SIGUSR2 waybar
 notify-send -i computer "Dunst" "Colors updated successfully!!!!"

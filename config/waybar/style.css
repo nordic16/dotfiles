@@ -52,7 +52,7 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 2px;
     background-color: @background;
     color: #ffffff;
 }
@@ -81,7 +81,10 @@ button:hover {
 #battery,
 #pulseaudio,
 #network,
-#bluetooth {
+#bluetooth,
+#mpris,
+#cpu,
+#memory {
     padding: 0 15px;
     border-radius: 10px;
     background-color: @background;
@@ -145,15 +148,6 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
-}
-
 #disk {
     background-color: #964b00;
 }
@@ -167,8 +161,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: @background;
     border-radius: 10px;
 }
 
@@ -304,4 +297,8 @@ label:focus {
 
 #privacy-item.audio-out {
     background-color: #0069d4;
+}
+
+#mpris {
+    background-color: @color3;
 }

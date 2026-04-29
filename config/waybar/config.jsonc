@@ -8,8 +8,8 @@
   // "width": 1280, // Waybar width
   "spacing": 15, // Gaps between modules (4px)
   // Choose the order of the modules
-  "modules-left": ["custom/power", "hyprland/workspaces", "custom/media"],
-  "modules-center": ["hyprland/window"],
+  "modules-left": ["custom/power", "hyprland/workspaces"],
+  "modules-center": ["hyprland/window", "cpu", "memory"],
   "modules-right": ["pulseaudio", "bluetooth", "network", "clock"],
   // Modules configuration
   "hyprland/workspaces": {
@@ -97,11 +97,11 @@
     "format-alt": "{:%d-%m-%Y}",
   },
   "cpu": {
-    "format": "{usage}% <span size='140%'></span>",
+    "format": "<span size='140%' rise='-2000'></span> {usage}%",
     "tooltip": false,
   },
   "memory": {
-    "format": "{}% ",
+    "format": "<span size='140%' rise='-2000'></span> {}%",
   },
   "temperature": {
     // "thermal-zone": 2,
@@ -193,7 +193,7 @@
   "hyprland/window": {
     "format": "{}",
     "icon": true,
-    "max-length": 65,
+    "max-length": 35,
   },
 
   "bluetooth": {
@@ -205,5 +205,27 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+  },
+
+  "mpris": {
+    "interval": 1,
+    "dynamic-len": 35,
+    "format": "<span size='140%' rise='-2000'>{player_icon}</span> <b>{dynamic}</b>",
+    "format-paused": "<span size='140%' rise='-2000'>{status_icon}</span> </b>{dynamic}</b>",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵",
+    },
+    "dynamic-importance-order": [
+      "title",
+      "artist",
+      "album",
+      "position",
+      "length",
+    ],
+    "status-icons": {
+      "paused": "⏸",
+    },
+    "ignored-players": ["firefox"],
   },
 }

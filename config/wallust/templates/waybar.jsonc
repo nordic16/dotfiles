@@ -1,0 +1,85 @@
+// -*- mode: jsonc -*-
+{
+  "reload_style_on_change": true,
+  "margin-top": 10,
+  "width": 1895,
+  "spacing": 15,
+
+  "modules-left": ["custom/power", "hyprland/workspaces", "mpris"],
+  "modules-center": ["hyprland/window", "cpu", "memory"],
+  "modules-right": ["pulseaudio", "bluetooth", "network", "clock"],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "<span color='{{color1}}' size='140%'></span>",
+      "2": "<span color='{{color2}}' size='140%'>󰖟</span>",
+      "3": "<span color='{{color3}}' size='140%'>󰅬</span>",
+      "4": "<span color='{{color4}}' size='140%'></span>",
+      "5": "<span color='{{color5}}' size='140%'></span>",
+      "urgent": "<span color='{{color1}}'>  </span>",
+      "focused": "<span color='{{color6}}'>  </span>",
+      "default": "  ",
+    },
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": "<span color='{{color5}}' size='140%' rise='-2000'>󱑃</span> {:%H:%M:%S}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d-%m-%Y}",
+  },
+
+  "cpu": {
+    "format": "<span color='{{color2}}' size='140%' rise='-2000'></span> {usage}%",
+    "tooltip": false,
+  },
+
+  "memory": {
+    "format": "<span color='{{color3}}' size='140%' rise='-2000'></span> {}%",
+  },
+
+  "network": {
+    "format-wifi": "<span color='{{color4}}'></span> {essid} ({signalStrength}%)",
+    "format-ethernet": "<span color='{{color4}}' size='140%' rise='-2000'></span> Connected",
+    "format-disconnected": "<span color='{{color1}}'>⚠</span> Disconnected",
+  },
+
+  "pulseaudio": {
+    "format": "<span color='{{color3}}' size='140%' rise='-2000'>{icon}</span> {volume}%",
+    "format-muted": "<span color='{{color8}}'></span> {format_source}",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "pavucontrol",
+  },
+
+  "bluetooth": {
+    "format": "<span color='{{color4}}'></span> {status}",
+    "format-connected": "<span color='{{color4}}'></span> {device_alias}",
+    "format-connected-battery": "<span color='{{color4}}'></span> {device_alias} {device_battery_percentage}%",
+  },
+
+  "mpris": {
+    "interval": 1,
+    "dynamic-len": 35,
+    "format": "<span color='{{color2}}' size='140%' rise='-2000'>{player_icon}</span> <b>{dynamic}</b>",
+    "format-paused": "<span color='{{color8}}' size='140%' rise='-2000'>{status_icon}</span> <i>{dynamic}</i>",
+    "player-icons": { "default": "▶", "mpv": "🎵" },
+    "status-icons": { "paused": "⏸" },
+  },
+
+  "custom/power": {
+    "format": "<span color='{{color1}}' size='140%'>⏼</span>",
+    "on-click": "hyprshutdown",
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "icon": true,
+    "max-length": 35,
+  },
+}

@@ -29,6 +29,9 @@ dotfiles:
   d_fonts:
     src: fonts
     dst: ~/.fonts
+  f_vesktop.css:
+    src: config/wallust/templates/vesktop.css
+    dst: ~/.config/wallust/templates/vesktop.css
 profiles:
   xBit:
     dotfiles:
@@ -39,3 +42,4 @@ profiles:
     - d_wallust
     - d_scripts
     - d_fonts
+    - f_vesktop.css

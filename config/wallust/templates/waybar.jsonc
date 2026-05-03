@@ -3,22 +3,22 @@
   "reload_style_on_change": true,
   "margin-top": 10,
   "width": 1895,
-  "spacing": 15,
+  "spacing": 10,
 
-  "modules-left": ["custom/power", "hyprland/workspaces"],
-  "modules-center": ["hyprland/window", "cpu", "memory"],
-  "modules-right": ["pulseaudio", "bluetooth", "network", "clock"],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["bluetooth", "network"],
+  "modules-right": ["clock", "pulseaudio/slider", "custom/power"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "1": "<span color='{{color7}}' size='140%'></span>",
-      "2": "<span color='{{color7}}' size='140%'>󰖟</span>",
-      "3": "<span color='{{color7}}' size='140%'>󰅬</span>",
-      "4": "<span color='{{color7}}' size='140%'></span>",
-      "5": "<span color='{{color7}}' size='140%'></span>",
+      "1": "<span size='140%'>󰣇</span>",
+      "2": "<span size='140%'>󰖟</span>",
+      "3": "<span size='140%'>󰅬</span>",
+      "4": "<span size='140%'></span>",
+      "5": "<span size='140%'></span>",
       "urgent": "<span color='{{color1}}'>  </span>",
       "focused": "<span color='{{color6}}'>  </span>",
       "default": "  ",
@@ -27,7 +27,7 @@
 
   "clock": {
     "interval": 1,
-    "format": "<span color='{{color5}}' size='140%' rise='-2000'>󱑃</span> {:%H:%M:%S}",
+    "format": "{:%H:%M:%S}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%d-%m-%Y}",
   },
@@ -42,14 +42,14 @@
   },
 
   "network": {
-    "format-wifi": "<span color='{{color4}}'></span> {essid} ({signalStrength}%)",
-    "format-ethernet": "<span color='{{color4}}' size='140%' rise='-2000'></span> Connected",
-    "format-disconnected": "<span color='{{color1}}'>⚠</span> Disconnected",
+    "format-wifi": "<span color='#8BC34A' size='140%'></span> {essid} ({signalStrength}%)",
+    "format-ethernet": "<span color='#8BC34A' size='140%' rise='-2000'>󰖩</span>",
+    "format-disconnected": "<span color='{{color1}}'>⚠</span>",
   },
 
   "pulseaudio": {
-    "format": "<span color='{{color3}}' size='140%' rise='-2000'>{icon}</span> {volume}%",
-    "format-muted": "<span color='{{color8}}'></span> {format_source}",
+    "format": "<span color='{{color3}}' size='140%' rise='-2000'>{icon}</span> {value}%",
+    "format-muted": "<span color='#F44336'></span> {format_source}",
     "format-icons": {
       "headphone": "",
       "default": ["", "", ""],
@@ -58,9 +58,9 @@
   },
 
   "bluetooth": {
-    "format": "<span color='{{color4}}'></span> {status}",
-    "format-connected": "<span color='{{color4}}'></span> {device_alias}",
-    "format-connected-battery": "<span color='{{color4}}'></span> {device_alias} {device_battery_percentage}%",
+    "format": "<span rise='-2000'></span>",
+    "format-connected": "<span rise='-2000' color='#8BC34A'></span>",
+    "format-connected-battery": "<span color='#F44336' rise='-2000'></span>",
   },
 
   "mpris": {
@@ -81,5 +81,11 @@
     "format": "{}",
     "icon": true,
     "max-length": 35,
+  },
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
   },
 }

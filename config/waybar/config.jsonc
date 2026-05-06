@@ -3,11 +3,11 @@
   "reload_style_on_change": true,
   "margin-top": 10,
   "width": 1895,
-  "spacing": 10,
+  "spacing": 0,
 
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["bluetooth", "network"],
-  "modules-right": ["clock", "pulseaudio/slider", "custom/power"],
+  "modules-center": ["bluetooth", "custom/updates", "network"],
+  "modules-right": ["clock", "pulseaudio/slider"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -78,14 +78,20 @@
   },
 
   "hyprland/window": {
-    "format": "{}",
-    "icon": true,
-    "max-length": 35,
+    "format": "<span color='#E39554' size='140%' rise='-2000'>󰍹</span> {}",
+    "icon": false,
+    "max-length": 50,
   },
 
   "pulseaudio/slider": {
     "min": 0,
     "max": 100,
     "orientation": "horizontal",
+  },
+
+  "custom/updates": {
+    "format": "<span color='#A78A93' size='140%' rise='-2000'></span> {}",
+    "interval": 60,
+    "exec": "sh -c 'yay -Qu | wc -l'",
   },
 }

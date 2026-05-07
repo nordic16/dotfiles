@@ -13,6 +13,9 @@
     "disable-scroll": true,
     "all-outputs": true,
     "format": "{icon}",
+    "persistent-workspaces": {
+      "HDMI-A-1": [1, 2, 3, 4, 5],
+    },
     "format-icons": {
       "1": "<span size='140%'>󰣇</span>",
       "2": "<span size='140%'>󰖟</span>",

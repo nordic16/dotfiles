@@ -1,11 +1,12 @@
-backend = "full"
-color_space = "lab"
-palette = "saliencedark"
+backend = "wal"
+color_space = "labmixed"
+palette = "salience"
 check_contrast = true
 
 
 [templates]
-hyprland = { src = "hypr_colors.conf", dst = "~/.config/hypr/colors.conf" }
+kitty = { src = "kitty.conf", dst = "~/.config/kitty/colors.conf" }
+hyprland = { src = "hypr_colors.lua", dst = "~/.config/hypr/colors.lua" }
 hyprland-plugins = { src = "hyprland-plugins.conf", dst = "~/.config/hypr/plugins.conf" }
 waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
 pywal_json = { src = "colors.json", dst = "~/.cache/wal/colors.json" }

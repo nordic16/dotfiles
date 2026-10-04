@@ -32,6 +32,18 @@ dotfiles:
   f_vesktop.css:
     src: config/wallust/templates/vesktop.css
     dst: ~/.config/wallust/templates/vesktop.css
+  f_hyprland.lua:
+    src: config/hypr/hyprland.lua
+    dst: ~/.config/hypr/hyprland.lua
+  f_colors.conf:
+    src: config/kitty/colors.conf
+    dst: ~/.config/kitty/colors.conf
+  f_kitty.conf:
+    src: config/kitty/kitty.conf
+    dst: ~/.config/kitty/kitty.conf
+  f_hyprsunset.conf:
+    src: config/hypr/hyprsunset.conf
+    dst: ~/.config/hypr/hyprsunset.conf
 profiles:
   xBit:
     dotfiles:
@@ -43,3 +55,7 @@ profiles:
     - d_scripts
     - d_fonts
     - f_vesktop.css
+    - f_hyprland.lua
+    - f_colors.conf
+    - f_kitty.conf
+    - f_hyprsunset.conf

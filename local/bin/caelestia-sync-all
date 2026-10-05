@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCHEME="$HOME/.local/state/caelestia/scheme.json"
+KITTY_CONF="$HOME/.config/kitty/colors.conf"
+HYPR_LUA="$HOME/.config/hypr/colors.lua"
+
+if [ ! -f "$SCHEME" ]; then
+    exit 0
+fi
+
+# 1. Gera o tema do Kitty usando as cores de terminal nativas calculadas pela Caelestia
+jq -r '.colours as $c |
+  "foreground #" + $c.onSurface,
+  "background #" + $c.surface,
+  "selection_foreground #" + $c.onSecondaryContainer,
+  "selection_background #" + $c.secondaryContainer,
+  "cursor #" + $c.primary,
+  "cursor_text_color #" + $c.onPrimary,
+  "color0 #" + $c.term0,
+  "color1 #" + $c.term1,
+  "color2 #" + $c.term2,
+  "color3 #" + $c.term3,
+  "color4 #" + $c.term4,
+  "color5 #" + $c.term5,
+  "color6 #" + $c.term6,
+  "color7 #" + $c.term7,
+  "color8 #" + $c.term8,
+  "color9 #" + $c.term9,
+  "color10 #" + $c.term10,
+  "color11 #" + $c.term11,
+  "color12 #" + $c.term12,
+  "color13 #" + $c.term13,
+  "color14 #" + $c.term14,
+  "color15 #" + $c.term15
+' "$SCHEME" > "$KITTY_CONF"
+
+# 2. Gera a tabela de cores para o Hyprland (0xffRRGGBB)
+jq -r '.colours as $c |
+  "return {",
+  "    background = \"0xff" + $c.surface + "\",",
+  "    foreground = \"0xff" + $c.onSurface + "\",",
+  "    primary    = \"0xff" + $c.primary + "\",",
+  "    secondary  = \"0xff" + $c.secondary + "\",",
+  "    tertiary   = \"0xff" + $c.tertiary + "\",",
+  "    surface    = \"0xff" + $c.surfaceContainer + "\",",
+  "    outline    = \"0xff" + $c.outline + "\"",
+  "}"
+' "$SCHEME" > "$HYPR_LUA"
+
+# 3. Notifica as instâncias abertas
+kitty @ set-colors -a -c "$KITTY_CONF" 2>/dev/null || true
+hyprctl reload >/dev/null 2>&1 || true

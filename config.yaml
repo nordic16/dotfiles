@@ -44,6 +44,12 @@ dotfiles:
   f_hyprsunset.conf:
     src: config/hypr/hyprsunset.conf
     dst: ~/.config/hypr/hyprsunset.conf
+  f_hyprpaper.conf:
+    src: config/hypr/hyprpaper.conf
+    dst: ~/.config/hypr/hyprpaper.conf
+  d_bin:
+    src: local/bin
+    dst: ~/.local/bin
 profiles:
   xBit:
     dotfiles:
@@ -59,3 +65,5 @@ profiles:
     - f_colors.conf
     - f_kitty.conf
     - f_hyprsunset.conf
+    - f_hyprpaper.conf
+    - d_bin

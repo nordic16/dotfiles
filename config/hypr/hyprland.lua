@@ -41,7 +41,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal = "kitty"
 local fileManager = "dolphin"
-local menu = "hyprlauncher"
+local menu = "caelestia shell drawers toggle launcher"
 
 
 -------------------
@@ -61,8 +61,11 @@ local menu = "hyprlauncher"
 -- end)
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("ssh-agent && nvidia-settings --load-config-only")
+    hl.exec_cmd("hyprsunset")
+    hl.exec_cmd("caelestia shell")
+    hl.exec_cmd(os.getenv("HOME") .. "/.local/bin/caelestia-color-daemon")
+    hl.exec_cmd("ssh-agent")
+    hl.exec_cmd("nvidia-settings --load-config-only")
 end)
 
 -------------------------------
@@ -273,7 +276,6 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + W", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + S", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
@@ -375,3 +377,8 @@ hl.window_rule({
 
 -- CUSTOM BINDS
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("firefox"))
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("caelestia shell picker open"))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("caelestia shell drawers toggle session"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("caelestia shell lock lock"))
+hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("caelestia emoji -p"))

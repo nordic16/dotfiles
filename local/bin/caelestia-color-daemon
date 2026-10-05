@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+TARGET_DIR="$HOME/.local/state/caelestia"
+
+# Sincroniza logo uma vez ao inicializar o daemon
+"$HOME/.local/bin/caelestia-sync-all"
+
+# Escuta quando o scheme.json é movido para o local definitivo
+inotifywait -m -e moved_to "$TARGET_DIR" --format '%f' 2>/dev/null | while read -r file; do
+    if [ "$file" = "scheme.json" ]; then
+        # Pequena pausa de segurança (50ms) para libertar eventuais locks de I/O
+        sleep 0.05
+        "$HOME/.local/bin/caelestia-sync-all"
+    fi
+done

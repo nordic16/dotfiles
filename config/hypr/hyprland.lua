@@ -66,6 +66,10 @@ hl.on("hyprland.start", function()
     hl.exec_cmd(os.getenv("HOME") .. "/.local/bin/caelestia-color-daemon")
     hl.exec_cmd("ssh-agent")
     hl.exec_cmd("nvidia-settings --load-config-only")
+    
+    -- keyring
+    hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 end)
 
 -------------------------------
@@ -382,3 +386,9 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("caelestia shell drawers toggle session"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("caelestia shell lock lock"))
 hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("caelestia emoji -p"))
+
+
+-- VARIABLES
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("NVD_BACKEND", "direct")
+hl.env("MOZ_ENABLE_WAYLAND", "1")

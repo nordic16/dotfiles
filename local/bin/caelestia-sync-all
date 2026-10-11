@@ -48,6 +48,8 @@ jq -r '.colours as $c |
   "}"
 ' "$SCHEME" > "$HYPR_LUA"
 
+caelestia-sync-codium
+
 # 3. Notifica as instâncias abertas
 kitty @ set-colors -a -c "$KITTY_CONF" 2>/dev/null || true
 hyprctl reload >/dev/null 2>&1 || true

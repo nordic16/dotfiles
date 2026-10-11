@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+SETTINGS="$HOME/.config/VSCodium/User/settings.json"
+SCHEME="$HOME/.local/state/caelestia/scheme.json"
+
+[ -f "$SCHEME" ] || exit 0
+[ -f "$SETTINGS" ] || exit 0
+
+TEMP_SETTINGS=$(mktemp)
+sed -E 's/^[[:space:]]*\/\/.*//g' "$SETTINGS" > "$TEMP_SETTINGS"
+
+jq --slurpfile s "$SCHEME" '
+  .["workbench.colorCustomizations"] = (.["workbench.colorCustomizations"] // {}) + {
+    "editor.background": ("#" + $s[0].colours.surface),
+    "editor.foreground": ("#" + $s[0].colours.onSurface),
+    "editorLineNumber.foreground": ("#" + $s[0].colours.outlineVariant),
+    "editorLineNumber.activeForeground": ("#" + $s[0].colours.primary),
+    "editorCursor.foreground": ("#" + $s[0].colours.primary),
+
+    "editorGroupHeader.tabsBackground": ("#" + $s[0].colours.surfaceContainerLow),
+    "tab.activeBackground": ("#" + $s[0].colours.surface),
+    "tab.activeForeground": ("#" + $s[0].colours.primary),
+    "tab.inactiveBackground": ("#" + $s[0].colours.surfaceContainerLow),
+    "tab.inactiveForeground": ("#" + $s[0].colours.onSurfaceVariant),
+
+    "sideBar.background": ("#" + $s[0].colours.surfaceContainerLow),
+    "sideBar.foreground": ("#" + $s[0].colours.onSurface),
+    "sideBarTitle.foreground": ("#" + $s[0].colours.onSurface),
+    "sideBarSectionHeader.background": ("#" + $s[0].colours.surfaceContainer),
+
+    "activityBar.background": ("#" + $s[0].colours.surfaceContainer),
+    "activityBar.foreground": ("#" + $s[0].colours.primary),
+    "activityBar.inactiveForeground": ("#" + $s[0].colours.onSurfaceVariant),
+
+    "statusBar.background": ("#" + $s[0].colours.surfaceContainer),
+    "statusBar.foreground": ("#" + $s[0].colours.onSurface),
+    "statusBarItem.remoteBackground": ("#" + $s[0].colours.primaryContainer),
+    "statusBarItem.remoteForeground": ("#" + $s[0].colours.onPrimaryContainer),
+
+    "titleBar.activeBackground": ("#" + $s[0].colours.surfaceContainer),
+    "titleBar.activeForeground": ("#" + $s[0].colours.onSurface),
+
+    "terminal.background": ("#" + $s[0].colours.surface),
+    "terminal.foreground": ("#" + $s[0].colours.onSurface),
+    "terminal.ansiBlack": ("#" + $s[0].colours.term0),
+    "terminal.ansiRed": ("#" + $s[0].colours.term1),
+    "terminal.ansiGreen": ("#" + $s[0].colours.term2),
+    "terminal.ansiYellow": ("#" + $s[0].colours.term3),
+    "terminal.ansiBlue": ("#" + $s[0].colours.term4),
+    "terminal.ansiMagenta": ("#" + $s[0].colours.term5),
+    "terminal.ansiCyan": ("#" + $s[0].colours.term6),
+    "terminal.ansiWhite": ("#" + $s[0].colours.term7)
+  } |
+  .["editor.tokenColorCustomizations"] = (.["editor.tokenColorCustomizations"] // {}) + {
+    "comments": ("#" + $s[0].colours.subtext0),
+    "functions": ("#" + $s[0].colours.blue),
+    "keywords": ("#" + $s[0].colours.mauve),
+    "strings": ("#" + $s[0].colours.green),
+    "numbers": ("#" + $s[0].colours.peach),
+    "types": ("#" + $s[0].colours.yellow),
+    "variables": ("#" + $s[0].colours.text),
+    "textMateRules": [
+      {
+        "scope": ["storage.type", "storage.modifier"],
+        "settings": { "foreground": ("#" + $s[0].colours.mauve) }
+      },
+      {
+        "scope": ["entity.name.function", "support.function"],
+        "settings": { "foreground": ("#" + $s[0].colours.blue) }
+      },
+      {
+        "scope": ["entity.name.type", "support.type"],
+        "settings": { "foreground": ("#" + $s[0].colours.teal) }
+      },
+      {
+        "scope": ["constant.numeric", "constant.language"],
+        "settings": { "foreground": ("#" + $s[0].colours.peach) }
+      },
+      {
+        "scope": ["string", "punctuation.definition.string"],
+        "settings": { "foreground": ("#" + $s[0].colours.green) }
+      },
+      {
+        "scope": ["comment", "punctuation.definition.comment"],
+        "settings": { "fontStyle": "italic", "foreground": ("#" + $s[0].colours.subtext0) }
+      }
+    ]
+  }
+' "$TEMP_SETTINGS" > /tmp/codium_settings.json && mv /tmp/codium_settings.json "$SETTINGS"
+
+rm -f "$TEMP_SETTINGS"

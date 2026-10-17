@@ -114,7 +114,7 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = colors.color4,
+            active_border   = colors.color1,
             inactive_border = colors.color2,
         },
 
@@ -144,8 +144,8 @@ hl.config({
 
         blur = {
             enabled   = true,
-            size      = 3,
-            passes    = 1,
+            size      = 4,
+            passes    = 2,
             vibrancy  = 0.1696,
         },
     },

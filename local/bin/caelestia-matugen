@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+SCHEME="$HOME/.local/state/caelestia/scheme.json"
+
+jq '{
+  special: {
+    background: ("#" + .colours.background),
+    foreground: ("#" + .colours.onBackground),
+    cursor: ("#" + .colours.primary)
+  },
+  colors: {
+    color0: ("#" + .colours.term0),
+    color1: ("#" + .colours.term1),
+    color2: ("#" + .colours.term2),
+    color3: ("#" + .colours.term3),
+    color4: ("#" + .colours.term4),
+    color5: ("#" + .colours.term5),
+    color6: ("#" + .colours.term6),
+    color7: ("#" + .colours.term7),
+    color8: ("#" + .colours.term8),
+    color9: ("#" + .colours.term9),
+    color10: ("#" + .colours.term10),
+    color11: ("#" + .colours.term11),
+    color12: ("#" + .colours.term12),
+    color13: ("#" + .colours.term13),
+    color14: ("#" + .colours.term14),
+    color15: ("#" + .colours.term15)
+  }
+}' "$SCHEME" > "$HOME/.config/wallust/themes/caelestia.json"
+
+wallust cs "$HOME/.config/wallust/themes/caelestia.json"

@@ -1,30 +1,49 @@
 #!/usr/bin/env bash
-SCHEME="$HOME/.local/state/caelestia/scheme.json"
 
-jq '{
+SCHEME_FILE="$HOME/.local/state/caelestia/scheme.json"
+
+# Se o postHook passou a variável de ambiente, usa-a; caso contrário lê do ficheiro
+if [ -n "$SCHEME_COLOURS" ]; then
+    JQ_INPUT="$SCHEME_COLOURS"
+    FILTER='.'
+elif [ -f "$SCHEME_FILE" ]; then
+    JQ_INPUT=$(cat "$SCHEME_FILE")
+    FILTER='.colours'
+else
+    exit 0
+fi
+
+# 1. Gerar o esquema de cores para o Wallust
+echo "$JQ_INPUT" | jq "$FILTER | {
   special: {
-    background: ("#" + .colours.background),
-    foreground: ("#" + .colours.onBackground),
-    cursor: ("#" + .colours.primary)
+    background: (\"#\" + .background),
+    foreground: (\"#\" + .onBackground),
+    cursor: (\"#\" + .primary)
   },
   colors: {
-    color0: ("#" + .colours.term0),
-    color1: ("#" + .colours.term1),
-    color2: ("#" + .colours.term2),
-    color3: ("#" + .colours.term3),
-    color4: ("#" + .colours.term4),
-    color5: ("#" + .colours.term5),
-    color6: ("#" + .colours.term6),
-    color7: ("#" + .colours.term7),
-    color8: ("#" + .colours.term8),
-    color9: ("#" + .colours.term9),
-    color10: ("#" + .colours.term10),
-    color11: ("#" + .colours.term11),
-    color12: ("#" + .colours.term12),
-    color13: ("#" + .colours.term13),
-    color14: ("#" + .colours.term14),
-    color15: ("#" + .colours.term15)
+    color0: (\"#\" + .term0),
+    color1: (\"#\" + .term1),
+    color2: (\"#\" + .term2),
+    color3: (\"#\" + .term3),
+    color4: (\"#\" + .term4),
+    color5: (\"#\" + .term5),
+    color6: (\"#\" + .term6),
+    color7: (\"#\" + .term7),
+    color8: (\"#\" + .term8),
+    color9: (\"#\" + .term9),
+    color10: (\"#\" + .term10),
+    color11: (\"#\" + .term11),
+    color12: (\"#\" + .term12),
+    color13: (\"#\" + .term13),
+    color14: (\"#\" + .term14),
+    color15: (\"#\" + .term15)
   }
-}' "$SCHEME" > "$HOME/.config/wallust/themes/caelestia.json"
+}" > "$HOME/.config/wallust/themes/caelestia.json"
 
+# 2. Aplicar o tema com o Wallust
 wallust cs "$HOME/.config/wallust/themes/caelestia.json"
+
+# 3. Atualizar as bordas do Hyprland e recarregar
+echo "$JQ_INPUT" | jq -r "$FILTER | \"\$active_border = rgb(\" + .primary + \")\n\$inactive_border = rgb(\" + .surfaceContainerHighest + \")\"" > "$HOME/.config/hypr/colors.conf"
+
+hyprctl reload

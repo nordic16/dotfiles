@@ -63,7 +63,7 @@ local menu = "caelestia shell drawers toggle launcher"
 hl.on("hyprland.start", function()
     hl.exec_cmd("hyprsunset")
     hl.exec_cmd("caelestia shell")
-    hl.exec_cmd(os.getenv("HOME") .. "/.local/bin/caelestia-color-daemon")
+    -- hl.exec_cmd(os.getenv("HOME") .. "/.local/bin/caelestia-color-daemon")
     hl.exec_cmd("ssh-agent")
     hl.exec_cmd("nvidia-settings --load-config-only")
     

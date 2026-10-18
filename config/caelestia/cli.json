@@ -1,0 +1,6 @@
+{
+  "wallpaper": {
+    "dir": "~/wallpapers",
+    "postHook": "~/.local/bin/caelestia-wallust"
+  }
+}

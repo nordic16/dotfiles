@@ -50,6 +50,9 @@ dotfiles:
   d_bin:
     src: local/bin
     dst: ~/.local/bin
+  d_caelestia:
+    src: config/caelestia
+    dst: ~/.config/caelestia
 profiles:
   xBit:
     dotfiles:
@@ -67,3 +70,4 @@ profiles:
     - f_hyprsunset.conf
     - f_hyprpaper.conf
     - d_bin
+    - d_caelestia

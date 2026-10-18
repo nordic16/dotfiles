@@ -1,0 +1,34 @@
+{
+    "appearance": {
+        "transparency": {
+            "enabled": true
+        }
+    },
+    "background": {
+        "wallpaperEnabled": true
+    },
+    "general": {
+        "apps": {
+            "audio": [
+                "pavucontrol"
+            ],
+            "terminal": [
+                "kitty"
+            ]
+        }
+    },
+    "launcher": {
+        "enableDangerousActions": true,
+        "enabled": true
+    },
+    "paths": {
+        "wallpaperDir": "~/wallpapers"
+    },
+    "services": {
+        "clockFormat": "TwentyFourHour",
+        "weatherUnits": "Celsius"
+    },
+    "sidebar": {
+        "enabled": true
+    }
+}

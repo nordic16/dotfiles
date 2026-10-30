@@ -62,7 +62,6 @@ local menu = "caelestia shell drawers toggle launcher"
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("hyprsunset")
-    hl.exec_cmd("caelestia shell")
     -- hl.exec_cmd(os.getenv("HOME") .. "/.local/bin/caelestia-color-daemon")
     hl.exec_cmd("ssh-agent")
     hl.exec_cmd("nvidia-settings --load-config-only")
@@ -70,6 +69,7 @@ hl.on("hyprland.start", function()
     -- keyring
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("caelestia shell")
 end)
 
 -------------------------------
@@ -128,6 +128,11 @@ hl.config({
     },
 
     decoration = {
+	wobble = { -- not sure if i'll keep this shit
+	    enabled = true,
+	    damping = 24,
+	    intensity = 1.1,
+	},
         rounding       = 15,
         rounding_power = 4,
 
